@@ -48,8 +48,17 @@ public class Member extends BaseTimeEntity {
 	@Builder.Default
 	private Grade grade = Grade.BRONZE;
 
-	@OneToMany(mappedBy = "post", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "member", cascade = CascadeType.PERSIST)
 	@Builder.Default
 	private List<Post> posts = new ArrayList<>();
 
+	public void updateGrade() {
+		if (posts.size() < 10) {
+			this.grade = Grade.BRONZE;
+		} else if (posts.size() < 30) {
+			this.grade = Grade.SILVER;
+		} else {
+			this.grade = Grade.GOLD;
+		}
+	}
 }

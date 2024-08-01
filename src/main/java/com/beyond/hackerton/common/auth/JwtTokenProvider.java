@@ -1,5 +1,4 @@
-package com.beyond.ordersystem.common.auth;
-
+package com.beyond.hackerton.common.auth;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
