@@ -19,14 +19,12 @@ import lombok.NoArgsConstructor;
 public class PostSaveDto {
 	private String name;
 	private String contents;
-	private List<MultipartFile> files;
 
 	public Post toEntity(Member member){
 		return Post.builder()
-			.name(member.getName())	// 토큰 -> 이메일 -> 사용자 이름
+			.name(member.getName())    // 토큰 -> 이메일 -> 사용자 이름
 			.contents(this.contents)
 			.member(member)
-			// 추후에 이미지 파일 처리 필요
 			.build();
 	}
 

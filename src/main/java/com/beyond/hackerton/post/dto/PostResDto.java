@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class PostResDto {
 	private String name;
 	private String contents;
-	// private String imagePath;
+	private String imagePath;
 
 	public PostResDto fromEntity(Post post) {
 		return PostResDto.builder()
